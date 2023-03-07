@@ -35,9 +35,6 @@ function renderTodos(){
     todoList.insertAdjacentHTML("afterbegin", todos);
     renderEvent();
     copyEvent();
-  
-  todoList.insertAdjacentHTML("afterbegin", todos);
-  renderEvent();
 }
 
 function renderEvent(){
