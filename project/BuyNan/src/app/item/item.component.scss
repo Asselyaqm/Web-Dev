@@ -1,0 +1,60 @@
+@import '../../styles.scss';
+
+.article {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $borderInactive;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    &-photo {
+      margin-bottom: 30px;
+      margin-inline: auto;
+    }
+    &-name {
+      @include text-style($fw-semibold, $fs-m, $lh-m, $textHigh);
+      margin-bottom: 6px;
+    }
+    &-price, &-provider {
+      margin-bottom: 6px;
+      @include text-style($fw-regular, $fs-s, $lh-s, $textHigh);
+      &-name {
+        font-weight: $fw-semibold;
+      }
+    }
+    &-button {
+      margin-top: 10px;
+      @include text-style($fw-regular, $fs-m, $lh-m, white);
+      @include button-style(10px, 10px, 10px, 10px, $yellow, 12.5px, 60px);
+    }
+  }
+}
+
+.article__provider {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 20px 16px 20px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &-info {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include text-style($fw-regular, $fs-m, $lh-m, $textHigh);
+  }
+  &-manage {
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.odd_provider {
+  background-color: #F9F9F9;
+}
+
+.even_provider {
+  background-color: rgba(73, 159, 104, 0.1);
+}

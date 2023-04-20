@@ -1,0 +1,174 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* FONTS */
+@font-face {
+  font-family: "Saira";
+  src: local("Saira"), url(./assets/fonts/Saira_SemiExpanded-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url(./assets/fonts/Gilroy-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url(./assets/fonts/Gilroy-Semibold.ttf) format("truetype");
+}
+/* FONTS */ 
+
+/* NULLIFYING STYLES */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  :focus,
+  :active {
+    outline: none;
+  }
+  a:focus,
+  a:active {
+    outline: none;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  input,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+  input::-ms-clear {
+    display: none;
+  }
+  button {
+    color: inherit;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  ul li {
+    list-style: none;
+  }
+
+/* NULLIFYING STYLES */
+
+/* COLORS */
+
+$greenInactive: #499F68;
+$greenActive: #37995A;
+$greenHover: #278C4B;
+$greenSelected: #1C7E3F;
+$yellow: #FFB800;
+
+$borderInactive: #DDE1E6;
+
+$textHigh: #324552;
+$textMedium: #566976;
+
+$inputColor: #F8FAFB;
+
+/* COLORS */
+
+/* MIXINS */
+
+@mixin text-style($fontWeight, $fontSize, $lineHeight, $color) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $color;
+} 
+
+@mixin button-style($blu, $bru, $brd, $bld, $bgc, $pv, $ph) {
+  border-top-left-radius: $blu;
+  border-top-right-radius: $bru;
+  border-bottom-right-radius: $brd;
+  border-bottom-left-radius: $bld;
+  background-color: $bgc;
+  padding: $pv $ph;
+}
+
+/* MIXINS */
+
+/* VARIABLES  */
+
+
+// FONT SIZES //
+
+$fs-xl: 24px;
+$fs-l: 20px;
+$fs-m: 16px;
+$fs-s: 14px;
+$fs-xs: 12px;
+
+// FONT SIZES // 
+
+// LINE HEIGHTS //
+
+$lh-xl: 38px;
+$lh-l: 23px;
+$lh-m: 19px;
+$lh-s: 16px;
+$lh-xs: 14px;
+
+// LINE HEIGHTS // 
+
+// FONT WEIGHTS //
+
+$fw-semibold: 700;
+$fw-regular: 400;
+
+// FONT WEIGHTS //
+
+
+/* VARIABLES  */
+
+/* COMMON STYLES  */
+
+body {
+  font-family: 'Gilroy';
+}
+
+.activeButton {
+  background-color: $greenSelected;
+}
+
+h1 { @include text-style($fw-semibold, $fs-xl, $lh-xl, white); }
+h2 { @include text-style($fw-semibold, $fs-l, $lh-l, white); }
+
+/* COMMON STYLES  */

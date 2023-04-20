@@ -1,0 +1,25 @@
+<div class="modal">
+  <div class="modal__info">
+    <img 
+      src="../../assets/images/decorative/close.svg" 
+      class="modal__close"
+      (click)="closeModal()"
+    >
+    <div *ngIf="item.type !== 'auth'; else Login">
+      <span class="modal__field-name">{{ type }} a {{ item.type }}</span>
+      <div *ngFor="let field of fieldsList" class="modal__field">
+        {{ field }}
+        <input [(ngModel)]="item[field]" type="text">
+      </div>
+    </div>
+    <ng-template #Login>
+      <div>
+        Login
+        <input type="text" [(ngModel)]="item.username">
+        Password
+        <input type="text" [(ngModel)]="item.password">
+      </div>
+    </ng-template>
+    <button class="modal__button" (click)="onSubmit()">Submit</button>
+  </div>
+</div> 

@@ -1,0 +1,83 @@
+<main class="main">
+  <nav class="nav">
+    <header class="nav__header">
+      <img src="../assets/images/decorative/navbar/BuyNan.svg">
+      <h1 class="nav__company-name">BuyNan</h1>
+    </header>
+    <ul class="nav__list">
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Products')"
+        (click)="onNavClick('Products')"
+        [routerLink]="['products']"
+      >
+        <img src="../assets/images/decorative/navbar/icon_groceries.svg" width="24px" height="24px">
+        <h2 class="nav__item-name">Products</h2>
+      </li>
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Categories')"
+        (click)="onNavClick('Categories')"
+        [routerLink]="['categories']"
+      >
+        <img src="../assets/images/decorative/navbar/icon_clipboard.svg" width="24px" height="24px">
+        <h2 class="nav__item-name">Categories</h2>
+      </li>
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Providers')"
+        (click)="onNavClick('Providers')"
+        [routerLink]="['providers']"
+      >
+        <img src="../assets/images/decorative/navbar/icon_users.svg" width="24px" height="24px">
+        <h2 class="nav__item-name">Providers</h2>
+      </li>
+      <li 
+        class="nav__item" 
+        (click)="onNavClick('Authorization')"
+      >
+        <img src="../assets/images/decorative/navbar/icon_logout.svg" width="24px" height="24px">
+        <h2 class="nav__item-name">
+          {{ getTextForLogin() }}
+        </h2>
+      </li>
+    </ul>
+  </nav>
+  <article class="article">
+    <header>
+      <section>
+        <div class="article__login">
+          <img src="../assets/images/decorative/login.svg">
+          <span class="article__login-text">Login</span>
+        </div>
+      </section>
+      <section class="article__search-create">
+        <div class="article__search">
+          <input 
+            type="text" 
+            placeholder="Search" 
+            class="article__search-input"
+            [(ngModel)]="searchInput"
+          >
+          <button class="article__search-button">
+            <img src="../assets/images/decorative/search.svg">
+          </button>
+        </div>
+        <div class="article__create">
+          <button 
+            (click)="openModal('Create')" 
+            class="article__create-button"
+          >
+            <img src="../assets/images/decorative/icon_add.svg">
+            <span class="article__create-text">Create</span>
+          </button>
+        </div>
+      </section>
+    </header>
+
+    <section class="article__items-section">
+      <router-outlet></router-outlet>
+    </section>
+  </article>
+  <app-modal *ngIf="isModalActive()"></app-modal>
+</main>

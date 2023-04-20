@@ -1,0 +1,33 @@
+<div *ngIf="!logged">
+  <h1>Login form</h1>
+  <p>Username: <input type="text" [(ngModel)]="username"></p>
+  <p>Password: <input type="text" [(ngModel)]="password"></p>
+
+  <button (click)="login()">Login</button>
+</div>
+
+<div *ngIf="logged">
+  <h1>Navigation</h1>
+  <nav>
+    <ul>
+      <li>
+        <button [routerLink]="['/api/companies']">
+          Companies
+        </button>
+      </li>
+      <li>
+        <button [routerLink]="['/api/vacancies']">
+          Vacancies
+        </button>
+      </li>
+      <li>
+        <button [routerLink]="['/api/vacancies/top_ten']">
+          Top 10 vacancies
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <button (click)="logout()">Logout</button>
+  <button (click)="returnBack()">Return Back</button>
+  <router-outlet></router-outlet>
+</div>

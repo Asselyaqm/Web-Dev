@@ -1,0 +1,47 @@
+<li 
+  *ngIf="item.type !== 'provider'; else elseBlock"
+  class="article__item"
+  [routerLink]="[item.id+1]"
+>
+  <img 
+    src='../assets/images/{{item.src}}.png'
+    class="article__item-photo"
+    width="120"
+    height="120"
+  >
+  <h4 class="article__item-name">{{ item.name }}</h4>
+  <span 
+    *ngIf="isProduct()" 
+    class="article__item-price"
+  >
+    Price: <span class="article__item-price-name"> {{ item.price }}</span>
+  </span>
+  <span 
+    *ngIf="isProduct()" 
+    class="article__item-provider"
+  >
+    Provider: <span class="article__item-provider-name">{{ item.provider }}</span>
+  </span>
+  <button 
+    class="article__item-button"
+    (click)="openItemDetails(item)"
+  >Watch more</button>
+</li>
+
+<ng-template #elseBlock>
+  <li 
+    class="article__provider" 
+    [ngClass]="item.id % 2 === 0 ? 'odd_provider' : 'even_provider'"
+    [routerLink]="[item.id+1]"
+    (click)="openItemDetails(item)"
+  >
+    <div class="article__provider-info">
+      <span class="article__provider-number">{{ item.id + 1 }}</span>
+      <span class="article__provider-name">{{ item.name }}</span>
+      <span class="article__provider-email">{{ item.email }} </span>
+    </div>
+    <div class="article__provider-manage">
+      <img src="../../assets/images/decorative/icon_right.svg">
+    </div>
+  </li>
+</ng-template>

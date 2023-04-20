@@ -1,0 +1,48 @@
+<h1>
+  Name: {{ company.name }}
+</h1>
+<h3>
+  City: {{ company.city }}
+</h3>
+<h3>
+  Address: {{ company.address }}
+</h3>
+<p>
+  Description: {{ company.description}}
+</p>
+
+<form>
+  <input 
+    placeholder="name" 
+    type="text" 
+    [(ngModel)]="company.name" 
+    name="name"
+  >
+  <input 
+    placeholder="city" 
+    type="text" 
+    [(ngModel)]="company.city" 
+    name="city"
+  >
+  <input 
+    placeholder="address" 
+    type="text" 
+    [(ngModel)]="company.address" 
+    name="address"
+  >
+  <input 
+    placeholder="description" 
+    type="text" 
+    [(ngModel)]="company.description" 
+    name="description"
+  >
+  <input 
+    placeholder="id" 
+    type="text" 
+    [(ngModel)]="company.id" 
+    name="id"
+  >
+  <button (click)="putCompany()">Save Info</button>
+</form>
+
+<button (click)="deleteCompany()">Delete Company</button>
